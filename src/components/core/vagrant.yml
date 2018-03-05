@@ -8,5 +8,5 @@ core:
   chef:
     install: false
     cookbooks:
-      - gusztavvargadr_workstations_core
+      - workstations_core
     json: {}

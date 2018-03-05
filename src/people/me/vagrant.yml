@@ -23,11 +23,11 @@ playground:
     - components/svn/core
   chef:
     json:
-      gusztavvargadr_workstations_dockere:
+      workstations_dockere:
         profiles:
           images:
             hello-world:nanoserver:
-      gusztavvargadr_workstations_vagrant:
+      workstations_vagrant:
         profiles:
           boxes:
             ubuntu/trusty32:

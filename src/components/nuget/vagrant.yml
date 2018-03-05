@@ -3,9 +3,9 @@ core:
     - components/core/core
   chef:
     cookbooks:
-      - gusztavvargadr_workstations_nuget
+      - workstations_nuget
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         tools:
           chocolatey:
             nuget.commandline:

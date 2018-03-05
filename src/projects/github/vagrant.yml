@@ -3,7 +3,7 @@ core:
     - components/git/core
   chef:
     json:
-      gusztavvargadr_workstations_git:
+      workstations_git:
         profiles:
           workspaces:
             github:
@@ -15,7 +15,7 @@ git:
     - projects/github/core
   chef:
     json:
-      gusztavvargadr_workstations_git:
+      workstations_git:
         profiles:
           workspaces:
             github:

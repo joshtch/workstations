@@ -3,9 +3,9 @@ core:
     - components/core/core
   chef:
     cookbooks:
-      - gusztavvargadr_workstations_dockerc
+      - workstations_dockerc
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         requirements:
           features:
             Microsoft-Hyper-V:

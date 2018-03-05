@@ -1,3 +1,0 @@
-include_recipe 'gusztavvargadr_workstations_vagrant::requirements'
-include_recipe 'gusztavvargadr_workstations_vagrant::tools'
-include_recipe 'gusztavvargadr_workstations_vagrant::profiles'

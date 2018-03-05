@@ -3,7 +3,7 @@ core:
     - components/git/core
   chef:
     json:
-      gusztavvargadr_workstations_git:
+      workstations_git:
         profiles:
           workspaces:
             aspnet:
@@ -16,7 +16,7 @@ logging:
     - stacks/dotnetcore/library
   chef:
     json:
-      gusztavvargadr_workstations_git:
+      workstations_git:
         profiles:
           workspaces:
             aspnet:

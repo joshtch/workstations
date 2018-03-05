@@ -1,15 +1,15 @@
 require 'yaml'
 require 'erb'
 
-def gusztavvargadr_workstations_vm(config, vm_directory, vm)
+def workstations_vm(config, vm_directory, vm)
   src_directory = File.dirname(__FILE__)
   includes = ["#{(Pathname.new vm_directory).relative_path_from (Pathname.new src_directory)}/#{vm}"]
-  options = gusztavvargadr_workstations_vm_options(src_directory, includes)
+  options = workstations_vm_options(src_directory, includes)
 
   config.vm.define vm, primary: options['default'], autostart: options['default'] do |config_vm|
     box = options['box']
     box = vm if box.to_s.empty?
-    box = "gusztavvargadr/#{box}" unless box.include?('/')
+    box = "/#{box}" unless box.include?('/')
     config_vm.vm.box = box
 
     box_url = "#{src_directory}/boxes/#{box}.json"
@@ -33,15 +33,15 @@ def gusztavvargadr_workstations_vm(config, vm_directory, vm)
     config_vm.vm.synced_folder "#{src_directory}/..", '/vagrant-workstations'
 
     options_chef = options['chef']
-    gusztavvargadr_workstations_vm_chef config_vm, options_chef, 'requirements'
+    workstations_vm_chef config_vm, options_chef, 'requirements'
     config_vm.vm.provision :reload
-    gusztavvargadr_workstations_vm_chef config_vm, options_chef, 'tools'
+    workstations_vm_chef config_vm, options_chef, 'tools'
     config_vm.vm.provision :reload
-    gusztavvargadr_workstations_vm_chef config_vm, options_chef, 'profiles'
+    workstations_vm_chef config_vm, options_chef, 'profiles'
   end
 end
 
-def gusztavvargadr_workstations_vm_options(src_directory, includes)
+def workstations_vm_options(src_directory, includes)
   options = {}
   unless includes.nil?
     includes.each do |include|
@@ -52,21 +52,21 @@ def gusztavvargadr_workstations_vm_options(src_directory, includes)
       include_name = include_parts[1]
       include_version = include_parts[2]
 
-      options_current = gusztavvargadr_workstations_yml(src_directory, include_type, include_name)[include_version]
+      options_current = workstations_yml(src_directory, include_type, include_name)[include_version]
       puts include if options_current.nil?
-      options = options.deep_merge(gusztavvargadr_workstations_vm_options(src_directory, options_current['includes']).deep_merge(options_current))
+      options = options.deep_merge(workstations_vm_options(src_directory, options_current['includes']).deep_merge(options_current))
     end
   end
   options
 end
 
-def gusztavvargadr_workstations_yml(src_directory, type, name)
+def workstations_yml(src_directory, type, name)
   yml_path = "#{src_directory}/#{type}/#{name}/vagrant.yml"
   return {} unless File.exist?(yml_path)
   YAML.load(ERB.new(File.read(yml_path)).result)
 end
 
-def gusztavvargadr_workstations_vm_chef(config_vm, options, stage)
+def workstations_vm_chef(config_vm, options, stage)
   config_vm.vm.provision 'chef_solo' do |chef|
     chef.install = options['install']
 

@@ -3,9 +3,9 @@ core:
     - components/core/core
   chef:
     cookbooks:
-      - gusztavvargadr_workstations_dockere
+      - workstations_dockere
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         requirements:
           features:
             Containers:

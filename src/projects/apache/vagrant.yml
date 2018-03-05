@@ -3,7 +3,7 @@ core:
     - components/svn/core
   chef:
     json:
-      gusztavvargadr_workstations_svn:
+      workstations_svn:
         profiles:
           workspaces:
             apache:
@@ -16,7 +16,7 @@ log4net:
     - stacks/dotnetfx/library
   chef:
     json:
-      gusztavvargadr_workstations_svn:
+      workstations_svn:
         profiles:
           workspaces:
             apache:

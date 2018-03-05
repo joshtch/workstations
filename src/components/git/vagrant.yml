@@ -3,9 +3,9 @@ core:
     - components/core/core
   chef:
     cookbooks:
-      - gusztavvargadr_workstations_git
+      - workstations_git
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         tools:
           chocolatey:
             git:

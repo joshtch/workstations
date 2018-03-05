@@ -4,7 +4,7 @@ core:
     - stacks/infrastructure/dockere
   chef:
     json:
-      gusztavvargadr_workstations_dockere:
+      workstations_dockere:
         profiles:
           images:
             microsoft/dotnet:sdk-nanoserver:
@@ -20,7 +20,7 @@ web:
     - stacks/dotnet/web
   chef:
     json:
-      gusztavvargadr_workstations_dockere:
+      workstations_dockere:
         profiles:
           images:
             microsoft/aspnetcore-build:nanoserver:

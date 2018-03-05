@@ -3,7 +3,7 @@ core:
     - components/sql/core
   chef:
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         tools:
           windows:
             SQL Server Management Studio 17:

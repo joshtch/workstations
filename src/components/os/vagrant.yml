@@ -3,9 +3,9 @@ core:
     - components/core/core
   chef:
     cookbooks:
-      - gusztavvargadr_workstations_os
+      - workstations_os
     json:
-      gusztavvargadr_workstations_os:
+      workstations_os:
         requirements:
           locales:
             system: en-US

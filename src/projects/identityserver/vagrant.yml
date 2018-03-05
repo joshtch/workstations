@@ -3,7 +3,7 @@ core:
     - components/git/core
   chef:
     json:
-      gusztavvargadr_workstations_git:
+      workstations_git:
         profiles:
           workspaces:
             identityserver:
@@ -18,7 +18,7 @@ v3:
     - stacks/sql/management
   chef:
     json:
-      gusztavvargadr_workstations_git:
+      workstations_git:
         profiles:
           workspaces:
             identityserver:
@@ -38,7 +38,7 @@ v4:
     - stacks/sql/management
   chef:
     json:
-      gusztavvargadr_workstations_git:
+      workstations_git:
         profiles:
           workspaces:
             identityserver:

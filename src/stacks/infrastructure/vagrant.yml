@@ -3,12 +3,12 @@ core:
     - components/vagrant/core
   chef:
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         tools:
           chocolatey:
             chefdk:
             packer:
-      gusztavvargadr_workstations_vagrant:
+      workstations_vagrant:
         profiles:
           plugins:
             vagrant-reload:
@@ -29,7 +29,7 @@ virtualbox:
     - stacks/infrastructure/core
   chef:
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         tools:
           chocolatey:
             virtualbox:
@@ -40,11 +40,11 @@ aws:
     - components/aws/core
   chef:
     json:
-      gusztavvargadr_workstations_core:
+      workstations_core:
         tools:
           chocolatey:
             terraform:
-      gusztavvargadr_workstations_vagrant:
+      workstations_vagrant:
         profiles:
           plugins:
             vagrant-aws:
