@@ -1,6 +1,6 @@
 name 'workstations_core'
 maintainer 'Gusztav Varga'
-maintainer_email 'me@.me'
+maintainer_email 'me@gusztavvargadr.me'
 license 'MIT'
 description 'Installs/Configures Core workstations'
 long_description 'Installs/Configures Core workstations'

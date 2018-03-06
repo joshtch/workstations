@@ -1,6 +1,6 @@
 name 'workstations_os'
 maintainer 'Gusztav Varga'
-maintainer_email 'me@.me'
+maintainer_email 'me@gusztavvargadr.me'
 license 'MIT'
 description 'Installs/Configures OS workstations'
 long_description 'Installs/Configures OS workstations'

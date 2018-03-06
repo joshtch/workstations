@@ -9,7 +9,7 @@ def workstations_vm(config, vm_directory, vm)
   config.vm.define vm, primary: options['default'], autostart: options['default'] do |config_vm|
     box = options['box']
     box = vm if box.to_s.empty?
-    box = "/#{box}" unless box.include?('/')
+    box = "gusztavvargadr/#{box}" unless box.include?('/')
     config_vm.vm.box = box
 
     box_url = "#{src_directory}/boxes/#{box}.json"
